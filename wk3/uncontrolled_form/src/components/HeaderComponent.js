@@ -28,12 +28,13 @@ class Header extends Component {
         });
       }
       handleLogin(event) {
-        
+        this.toggleModal();
         alert("Username: " + this.username.value + " Password: " + this.password.value
             + " Remember: " + this.remember.checked);
         event.preventDefault();
 
     }
+      
 
     render() {
         return(
@@ -67,7 +68,7 @@ class Header extends Component {
                         </Collapse>
                     </div>
                 </Navbar>
-                <Modal  toggle={this.toggleModal} isOpen={this.state.isModalOpen}>
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                     <ModalBody>
                     
